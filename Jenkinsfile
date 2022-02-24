@@ -33,7 +33,7 @@ pipeline{
              steps {
               sh "pwd"
               dir('dev'){ 
-              git branch: 'master', credentialsId: '800ca5af-10a8-4cb1-b360-e0fe920332ce', url: 'https://github.com/kapilkumaria/ci-jenkins-npm.git'
+     /*         git branch: 'master', credentialsId: '800ca5af-10a8-4cb1-b360-e0fe920332ce', url: 'https://github.com/kapilkumaria/ci-jenkins-npm.git' */
               sh "sudo chmod 666 /var/run/docker.sock"
               sh "pwd"
               sh "docker build -t my-nodeapp ."
