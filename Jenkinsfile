@@ -17,7 +17,7 @@ pipeline{
         */    
          stage('Git Checkout'){
             steps{
-                git branch: 'feature01', credentialsId: '800ca5af-10a8-4cb1-b360-e0fe920332ce', url: 'https://github.com/kapilkumaria/ci-jenkins-npm.git'
+                git branch: 'master', credentialsId: '800ca5af-10a8-4cb1-b360-e0fe920332ce', url: 'https://github.com/kapilkumaria/ci-jenkins-npm.git'
             }
          }
         
