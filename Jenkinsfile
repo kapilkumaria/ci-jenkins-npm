@@ -10,7 +10,7 @@ pipeline{
 
          stage('hello AWS') {
             steps {
-                withAWS(credentials: 'aws-credentials', region: 'us-east-1')
+                withAWS(credentials: 'b57f33b1-e3db-432f-9a6d-562d3111b909', region: 'us-east-1')
             }
          }
             
