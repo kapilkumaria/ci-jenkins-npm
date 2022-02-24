@@ -1,26 +1,19 @@
 pipeline{
 
   agent any
-
-  withCredentials([[
-    $class: 'AmazonWebServicesCredentialsBinding',
-    credentialsId: "b57f33b1-e3db-432f-9a6d-562d3111b909",
-    accessKeyVariable: 'AWS_ACCESS_KEY_ID',
-    secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
-   ]])
-
-  environment {
-      AWS_ACCESS_KEY_ID = credentials('17437a28-ca2b-4fff-a6a0-dd7b0978a20d')
-      AWS_SECRET_ACCESS_KEY = credentials('17437a28-ca2b-4fff-a6a0-dd7b0978a20d') 
-   }
-
-
+  
   tools {
        terraform 'terraform'
    }
     
   stages{
-        
+
+         stage('hello AWS') {
+            steps {
+                withAWS(credentials: 'aws-credentials', region: 'us-east-1')
+            }
+         }
+            
          stage('Git Checkout'){
             steps{
                 git branch: 'feature01', credentialsId: 'd65caf3a-ef40-43d3-b1a1-624e7dcc4ca4', url: 'https://github.com/kapilkumaria/Dev-Project1.git'
