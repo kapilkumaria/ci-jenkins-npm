@@ -8,15 +8,16 @@ pipeline{
     
   stages{
 
+         /*
          stage('hello AWS') {
             steps {
                 withAWS(credentials: 'b57f33b1-e3db-432f-9a6d-562d3111b909', region: 'us-east-1')
             }
          }
-            
+        */    
          stage('Git Checkout'){
             steps{
-                git branch: 'feature01', credentialsId: 'd65caf3a-ef40-43d3-b1a1-624e7dcc4ca4', url: 'https://github.com/kapilkumaria/Dev-Project1.git'
+                git branch: 'feature01', credentialsId: '800ca5af-10a8-4cb1-b360-e0fe920332ce', url: 'https://github.com/kapilkumaria/ci-jenkins-npm.git'
             }
          }
         
@@ -27,7 +28,7 @@ pipeline{
              steps {
               sh "pwd"
               dir('dev'){ 
-              git branch: 'feature01', credentialsId: 'd65caf3a-ef40-43d3-b1a1-624e7dcc4ca4', url: 'https://github.com/kapilkumaria/Dev-Project1.git'
+              git branch: 'master', credentialsId: '800ca5af-10a8-4cb1-b360-e0fe920332ce', url: 'https://github.com/kapilkumaria/ci-jenkins-npm.git'
               sh "sudo chmod 666 /var/run/docker.sock"
               sh "pwd"
               sh "docker build -t my-nodeapp ."
