@@ -17,7 +17,7 @@ pipeline{
         
          stage('Git Checkout'){
             steps{
-                git branch: 'master', credentialsId: '800ca5af-10a8-4cb1-b360-e0fe920332ce', url: 'https://github.com/kapilkumaria/Dev-Project1.git'
+                git branch: 'master', credentialsId: '800ca5af-10a8-4cb1-b360-e0fe920332ce', url: 'https://github.com/kapilkumaria/ci-jenkins-npm.git'
             }
          }
         
@@ -28,7 +28,7 @@ pipeline{
              steps {
               sh "pwd"
               dir('dev'){ 
-              git branch: 'master', credentialsId: '800ca5af-10a8-4cb1-b360-e0fe920332ce', url: 'https://github.com/kapilkumaria/Dev-Project1.git'
+              git branch: 'master', credentialsId: '800ca5af-10a8-4cb1-b360-e0fe920332ce', url: 'https://github.com/kapilkumaria/ci-jenkins-npm.git'
              /* sh "chmod 666 /var/run/docker.sock" */
               sh "pwd"
               sh "docker build -t my-nodeapp ."
@@ -57,7 +57,7 @@ pipeline{
 
            steps {
              sh "pwd"
-             git branch: 'feature01', credentialsId: 'd65caf3a-ef40-43d3-b1a1-624e7dcc4ca4', url: 'https://github.com/kapilkumaria/Dev-Project1.git'
+             git branch: 'feature01', credentialsId: 'd65caf3a-ef40-43d3-b1a1-624e7dcc4ca4', url: 'https://github.com/kapilkumaria/ci-jenkins-npm.git'
              dir('dev'){
              sh "pwd"
              sh 'terraform init'
