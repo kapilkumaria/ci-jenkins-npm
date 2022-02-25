@@ -74,7 +74,7 @@ module "ec2" {
    #instance-type-db        = var.instance-type-db 
    key-name                = var.key-name 
    #bastion-ec2-tag         = var.bastion-ec2-tag
-   instance-profile        = module.iam.ec2-profile      
+#   instance-profile        = module.iam.ec2-profile      
 
 }
 
