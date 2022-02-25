@@ -36,7 +36,7 @@ pipeline{
               sh "pwd"
               sh "docker build -t my-nodeapp ."
               /*sh "docker tag my-nodeapp:latest 931058976119.dkr.ecr.us-east-1.amazonaws.com/my-nodeapp:latest"*/
-              sh "docker tag jenkins-pipeline-build-demo:latest 931058976119.dkr.ecr.us-east-1.amazonaws.com/jenkins-pipeline-build-demo:latest"
+              sh "docker tag my-nodeapp:latest:latest 931058976119.dkr.ecr.us-east-1.amazonaws.com/jenkins-pipeline-build-demo:latest"
               }
              }
          }
