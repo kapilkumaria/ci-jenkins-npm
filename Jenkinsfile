@@ -53,9 +53,8 @@ pipeline{
          
           
             
-         stage('Terraform init'){ll
-
-           steps {
+         stage('Terraform init'){
+          steps {
              sh "pwd"
              git branch: 'master', credentialsId: 'd65caf3a-ef40-43d3-b1a1-624e7dcc4ca4', url: 'https://github.com/kapilkumaria/ci-jenkins-npm.git'
              dir('dev'){
