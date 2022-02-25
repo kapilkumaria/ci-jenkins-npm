@@ -57,7 +57,7 @@ pipeline{
 
            steps {
              sh "pwd"
-             git branch: 'feature01', credentialsId: 'd65caf3a-ef40-43d3-b1a1-624e7dcc4ca4', url: 'https://github.com/kapilkumaria/ci-jenkins-npm.git'
+             git branch: 'master', credentialsId: 'd65caf3a-ef40-43d3-b1a1-624e7dcc4ca4', url: 'https://github.com/kapilkumaria/ci-jenkins-npm.git'
              dir('dev'){
              sh "pwd"
              sh 'terraform init'
