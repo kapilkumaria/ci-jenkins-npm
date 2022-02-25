@@ -53,7 +53,7 @@ pipeline{
          
           
             
-         stage('Terraform init'){
+         stage('Terraform init'){ll
 
            steps {
              sh "pwd"
