@@ -50,7 +50,8 @@ pipeline{
         
          stage('Push Image'){
           steps{
-             sh "docker push 931058976119.dkr.ecr.us-east-1.amazonaws.com/my-nodeapp:latest"
+             
+             sh "docker push 931058976119.dkr.ecr.us-east-1.amazonaws.com/jenkins-pipeline-build-demo:latest"
               }
          }
          
