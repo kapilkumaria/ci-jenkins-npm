@@ -1,28 +1,23 @@
 pipeline{
 
   agent any
-  
-  tools {
-       terraform 'terraform'
-   }
+
 
   environment {
       AWS_ACCESS_KEY_ID = credentials('AWS_ACCESS_KEY_ID')
       AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY') 
-  }
+   }
 
+
+  tools {
+       terraform 'terraform'
+   }
+    
   stages{
-
-         /*
-         stage('hello AWS') {
-            steps {
-                withAWS(credentials: 'b57f33b1-e3db-432f-9a6d-562d3111b909', region: 'us-east-1')
-            }
-         }
-        */    
+        
          stage('Git Checkout'){
             steps{
-                git branch: 'master', credentialsId: '800ca5af-10a8-4cb1-b360-e0fe920332ce', url: 'https://github.com/kapilkumaria/ci-jenkins-npm.git'
+                git branch: 'feature01', credentialsId: '800ca5af-10a8-4cb1-b360-e0fe920332ce', url: 'https://github.com/kapilkumaria/Dev-Project1.git'
             }
          }
         
@@ -33,8 +28,8 @@ pipeline{
              steps {
               sh "pwd"
               dir('dev'){ 
-     /*         git branch: 'master', credentialsId: '800ca5af-10a8-4cb1-b360-e0fe920332ce', url: 'https://github.com/kapilkumaria/ci-jenkins-npm.git' */
-              /*sh "sudo chmod 666 /var/run/docker.sock" */
+              git branch: 'feature01', credentialsId: '800ca5af-10a8-4cb1-b360-e0fe920332ce', url: 'https://github.com/kapilkumaria/Dev-Project1.git'
+              sh "sudo chmod 666 /var/run/docker.sock"
               sh "pwd"
               sh "docker build -t my-nodeapp ."
               sh "docker tag my-nodeapp:latest 931058976119.dkr.ecr.us-east-1.amazonaws.com/my-nodeapp:latest"
@@ -101,7 +96,3 @@ pipeline{
       }
   }
 }
-
-
-
-
