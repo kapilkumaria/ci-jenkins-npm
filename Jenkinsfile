@@ -69,7 +69,7 @@ pipeline{
          }
         }
                 
-         /*stage('Terraform apply?'){
+         stage('Terraform apply?'){
            steps {
              sh "pwd"
              dir('dev'){
@@ -78,7 +78,7 @@ pipeline{
              sh 'terraform apply -auto-approve'  
           }
          }
-        }*/
+        }
 
                   
          stage('Terraform destroy?'){
