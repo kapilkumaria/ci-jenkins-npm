@@ -15,5 +15,5 @@ resource "aws_iam_role" "kapil_ec2_role" {
 
 resource "aws_iam_instance_profile" "ec2-profile" {
   name = "kapil_ec2_profile"
-  role = aws_iam_role.kapil_ec2_role.name
+  role = aws_iam_role.kapil_ec2_role.kapil_profile
 }
